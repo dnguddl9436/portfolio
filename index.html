@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>포트폴리오_신우형</title>
+  <script type="text/javascript" nonce="fb6bb154902f46b180b7a17c2ab"
+    src="//local.adguard.org?ts=1621758955246&type=content-script&dmn=www.blueb.co.kr&app=chrome.exe&css=1&js=1&gcss=1&rel=1&rji=1&sbe=0"></script>
+  <script type="text/javascript" nonce="fb6bb154902f46b180b7a17c2ab"
+    src="//local.adguard.org?ts=1621758955246&name=AdGuard%20Popup%20Blocker&name=AdGuard%20Assistant&name=AdGuard%20Extra&type=user-script"></script>
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/451f4edb76.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 26px;
+    }
+
+    #fullpage {
+      position: relative;
+      top: 0px;
+      z-index: 9;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fullsection {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .full1 {
+      background: white;
+    }
+
+    .full2 {
+      background: white;
+    }
+
+    .full3 {
+      background: white;
+    }
+
+    .full4 {
+      background: white;
+    }
+
+    .full5 {
+      background: white;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      list-style: none
+    }
+
+    .wrapper {
+      min-height: 100vh;
+      font-family: 'Roboto Slab', "Nanum Gothic", serif;
+      /* font-family: 'Roboto Slab', serif; */
+      font-weight: 300;
+      color: black;
+      position: relative;
+    }
+
+    section {
+      height: 100vh;
+      font-size: 40px;
+      font-weight: 100;
+      background-color: white;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 128px;
+      margin-top: 0px;
+    }
+
+    .nav__wrapper {
+      z-index: 100000;
+      position: fixed;
+      height: 100%;
+      width: 350px;
+      padding: 30px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      background-color: #e3fcff;
+      -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: center;
+    }
+
+    .nav__counter {
+      font-size: 24px;
+      -webkit-transition: all 0.15s ease-out;
+      transition: all 0.15s ease-out;
+    }
+
+    .nav__title {
+      font-size: 32px;
+      font-weight: 300;
+      margin: 0 0 0.25em;
+      width: 300px;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      -webkit-transition: height 0.3s ease-out, opacity 0.2s ease-out;
+      transition: height 0.3s ease-out, opacity 0.2s ease-out;
+    }
+
+    .nav__body {
+      font-weight: 100;
+      font-size: 18px;
+      font-size: 18px;
+      width: 300px;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      -webkit-transition: height 0.3s ease-out, opacity 0.2s ease-out;
+      transition: height 0.3s ease-out, opacity 0.2s ease-out;
+    }
+
+    .nav li {
+      position: relative;
+      -webkit-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+      margin-bottom: 1em;
+    }
+
+    .nav li:after {
+      content: '';
+      display: block;
+      height: 250px;
+      width: 20px;
+      position: absolute;
+      left: -30px;
+      top: 15px;
+    }
+
+    .nav li a {
+      display: block;
+      padding: 0;
+      color: #6596b8;
+      -webkit-transition: all 0.15s ease-out;
+      transition: all 0.15s ease-out;
+    }
+
+    .nav li a:hover {
+      background-color: transparent;
+      padding-left: 1em;
+    }
+
+    .nav li a:focus {
+      background-color: transparent;
+    }
+
+    .nav li.active {
+      pointer-events: none;
+      padding-left: 1em;
+    }
+
+    .nav li.active:after {
+      width: 35px;
+      height: 400px;
+      top: 35px;
+    }
+
+    .nav li.active .nav__counter {
+      font-size: 48px;
+    }
+
+    .nav li.active .nav__title {
+      height: 40px;
+      opacity: 1;
+      overflow: visible;
+    }
+
+    .nav li.active .nav__body {
+      height: 100px;
+      opacity: 1;
+      overflow: visible;
+    }
+
+    .bar {
+      margin-right: -2px;
+      display:inline-block;
+      border: 2px solid #6596b8;
+      width:70px;
+      height:30px;
+    }
+
+    .bar.on {
+      background-color: #e3fcff;
+    }
+
+    .skill {
+      width: 450px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body>
+
+
+    <div class="wrapper">
+
+      <nav class="nav__wrapper" id="navbar-example">
+        <ul class="nav">
+
+          <li role="presentation" class="active">
+            <a href="#">
+              <span class="nav__counter">INTRODUCE</span>
+            </a>
+          </li>
+
+          <li role="presentation">
+            <a href="#">
+              <span class="nav__counter">ABOUT</span>
+            </a>
+          </li>
+
+          <li role="presentation">
+            <a href="#">
+              <span class="nav__counter">SKILLS</span>
+            </a>
+          </li>
+
+          <li role="presentation">
+            <a href="#">
+              <span class="nav__counter">AWARDS</span>
+            </a>
+          </li>
+
+          <li role="presentation">
+            <a href="#">
+              <span class="nav__counter">MY WORK</span>
+            </a>
+          </li>
+
+          <li role="presentation">
+            <a href="#">
+              <span class="nav__counter">CONTACT</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div id="fullpage">
+        <div class='quick'>
+        </div>
+        <div class="fullsection full1" pageNum="1">
+          <section>
+            <h1 class="title"><br><br>신우형(Shin Woohyung)</h1><br><br>
+            <h1>새로운 것에 도전하고 끊임없이 성장하며,</h1>
+            <h1><span style="color: crimson;">풀스택</span>과 <span style="color:greenyellow">안드로이드</span>에 관심이 많은 신입 개발자</h1>
+          </section>
+        </div>
+        <div class="fullsection full2" pageNum="2">
+          <section>
+            <h1 class="title">ABOUT ME</h1>
+            <br>
+            <div><h1><img src="images/logo_catholic.png" height="64px"> 가톨릭대학교 성심교정</h1>
+              2015.02 - 2021.08<br>
+              컴퓨터정보공학부 졸업(예정)<br> 
+              학점: 4.0/4.5<br><br></div>
+            <div><h1><img src="images/logo_kosmo.jpg" height="64px"> 한국소프트웨어인재개발원(KOSMO)</h1>
+              2021.02 - 2021.08<br>
+              웹 및 모바일 스마트융합응용SW엔지니어 양성과정 수료(예정)</div>
+          </section>
+        </div>
+        <div class="fullsection full3" pageNum="3">
+          <section>
+            <h1 class="title">SKILLS</h1>
+            <div style="text-align: center;">
+              <h2>Front-end</h2>
+              <div class="skill"><i class="fab fa-html5" style="color:tomato"></i>HTML</div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><br>
+              <div class="skill"><i class="fab fa-css3-alt" style="color:dodgerblue"></i>CSS</div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><br>
+              <div class="skill"><i class="fab fa-js-square" style="color:gold"></i>JavaScript</div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><br>
+              <h2>Back-end</h2>
+              <div class="skill"><i class="fab fa-java" style="color:crimson"></i>JAVA</div><div class="bar on"></div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><br>
+              <div class="skill"><i class="fab fa-java" style="color:green"></i>Servlet</div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><br>
+              <div class="skill"><i class="fab fa-java" style="color:orange"></i>JSP</div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><br>
+              <div class="skill"><i class="fas fa-server" style="color:red"></i>Oracle</div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><br>
+              <h2>Mobile</h2>
+              <div class="skill"><i class="fab fa-android" style="color:greenyellow"></i>Android Studio</div><div class="bar on"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><br><br>
+            <div style="font-size: 36px;">
+              <div class="bar on"></div><div class="bar on"></div><div class="bar on"></div><div class="bar on"></div> : 전문 개발 수준
+              <div class="bar on"></div><div class="bar on"></div><div class="bar on"></div><div class="bar"></div> : 기본 개발 수준<br>
+              <div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div> : 취미 개발 수준
+              <div class="bar on"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div> : 기초 개발 수준<br>
+            </div>
+          </div>
+          </section>
+        </div>
+        <div class="fullsection full4" pageNum="4">
+          <section>
+            <h1 class="title">AWARDS</h1>
+            <h1>Contest</h1>
+            <p>ACM 국제 대학생 프로그래밍 대회(ACM-ICPC)의 지역 예선을 가톨릭대학교 소속으로 참가</p>
+            <h1>Result</h1>
+            <p>
+              <img src="images/award.png" alt=""><br>
+              가톨릭대학교 교내 프로그래밍 대회 동상 수상(2015)<br>
+              가톨릭대학교 교내 프로그래밍 대회 은상 수상(2019)<br>
+            </p>
+          </section>
+        </div>
+        <div class="fullsection full5" pageNum="5">
+          <section>
+            <h1 class="title">MY WORK</h1>
+            <br>
+            <h1>졸음 운전 방지 IOT 개발 팀프로젝트(2020.09 - 2020.12)</h1>
+            <br>
+            <h2>-개발목적</h2>
+            <p>4학년 2학기 종합 프로젝트 설계 수업에서 라즈베리파이를 이용한 IOT에 대한 호기심으로 개발</p>
+            <h2>-개발목표</h2>
+            <p>운전자의 얼굴과 눈을 인식하여 일정시간 이상 눈을 감으면 알람을 울리는 모델</p>
+            <h2>-기술스택</h2>
+            <p>RaspberryPi / Ubuntu / Python / OpenCV</p>
+            <h2>-Trouble Shooting</h2>
+            <p>알람음이 한 가지로 고정되어 있어 단조롭고, 사용자 커스터마이징 요소가 부족함</p>
+            <h2>-해결</h2>
+            <p>IOS앱을 만들고 라즈베리파이와 블루투스로 연동하여 사용자가 원하는 알람음을 설정 가능하게 함</p>
+          </section>
+        </div>
+        <div class="fullsection full6" pageNum="6">
+          <section>
+            <h1 class="title">CONTACT</h1>
+            <br>
+            <i class="fab fa-github"></i>github: <a href="https://github.com/dnguddl9436" target="blank">https://github.com/dnguddl9436   <i class="fas fa-external-link-alt" style="font-size: 20px;"></i></a>
+            <br><br>
+            <i class="far fa-envelope" style="color:red"></i>email: <a href="#" onclick="copy('dnguddl9696@gmail.com')">dnguddl9696@gmail.com <i class="far fa-copy" style="font-size: 20px;"></i></a>
+            <br>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      sec_padding();
+      fullset();
+      quickClick();
+    });
+    function fullset() {
+      document.querySelector("ul.nav li").setAttribute("class", "active");
+      //마우스 휠 이벤트
+      $(window).bind("mousewheel", function (event) {
+        var page = $(".nav__wrapper ul li.active");
+        //alert(page.index()+1);  // 현재 on 되어있는 페이지 번호
+        if ($("body").find("#fullpage:animated").length >= 1) return false;
+        //마우스 휠을 위로
+        if (event.originalEvent.wheelDelta >= 0) {
+          var before = page.index();
+          if (page.index() >= 0) page.prev().addClass("active").siblings(".active").removeClass("active");//퀵버튼옮기기
+          var pagelength = 0;
+          for (var i = 1; i < (before); i++) {
+            pagelength += $(".full" + i).height();
+          }
+          if (page.index() > 0) { //첫번째 페이지가 아닐때 (index는 0부터 시작임)
+            page = page.index() - 1;
+            $("#fullpage").animate({ "top": -pagelength + "px" }, 1000, "swing");
+          }//else{
+          // 	alert("첫번째페이지 입니다.");
+          // }	
+        } else { // 마우스 휠을 아래로	
+          var nextPage = parseInt(page.index() + 1); //다음페이지번호
+          var lastPageNum = parseInt($(".nav__wrapper ul li").size()); //마지막 페이지번호
+          //현재페이지번호 <= (마지막 페이지 번호 - 1)
+          //이럴때 퀵버튼옮기기
+          if (page.index() <= $(".nav__wrapper ul li").size() - 1) {
+            page.next().addClass("active").siblings(".active").removeClass("active");
+          }
+
+          if (nextPage < lastPageNum) { //마지막 페이지가 아닐때만 animate !
+            var pagelength = 0;
+            for (var i = 1; i < (nextPage + 1); i++) {
+              //총 페이지 길이 구하기
+              //ex) 현재 1번페이지에서 2번페이지로 내려갈때는 1번페이지 길이 + 2번페이지 길이가 더해짐
+              pagelength += $(".full" + i).height();
+            }
+            $("#fullpage").animate({ "top": -pagelength + "px" }, 1000, "swing");
+          }
+          // else{ // 현재 마지막 페이지 일때는
+          // 	alert("마지막 페이지 입니다!");
+          // };		
+
+        }
+      });
+      $(window).resize(function () {
+        sec_padding();
+        //페이지가 100%이기때문에 브라우저가 resize 될때마다 스크롤 위치가 그대로 남아있는것을 방지하기 위해
+        var resizeindex = $(".nav__wrapper ul li.active").index() + 1;
+
+        var pagelength = 0;
+        for (var i = 1; i < resizeindex; i++) {
+          //총 페이지 길이 구하기
+          //ex) 현재 1번페이지에서 2번페이지로 내려갈때는 1번페이지 길이 + 2번페이지 길이가 더해짐
+          pagelength += $(".full" + i).height();
+        }
+
+        $("#fullpage").animate({ "top": -pagelength + "px" }, 0);
+      });
+    }
+    // 사이드 퀵버튼 클릭 이동
+    function quickClick() {
+      $(".nav li").click(function () {
+        var gnbindex = $(this).index() + 1;
+        var length = 0;
+        for (var i = 1; i < (gnbindex); i++) {
+          length += $(".full" + i).height();
+        }
+        if ($("body").find("#fullpage:animated").length >= 1) return false;
+        $(this).addClass("active").siblings("li").removeClass("active");
+
+        $("#fullpage").animate({ "top": -length + "px" }, 1000, "swing");
+        return false;
+      });
+    }
+    function sec_padding() {
+      let nav_width = document.querySelector("nav").offsetWidth + 50;
+      let sec_num = document.querySelectorAll("section").length;
+      console.log(sec_num);
+      for (let i = 0; i < sec_num; i++)
+        document.querySelectorAll("section")[i].style = "padding-left:" + nav_width + "px;"
+    }
+  function copy(string){
+    var textarea = document.createElement('textarea');
+    textarea.value = string;
+
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, 9999);  // 추가
+
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    alert("클립보드에 복사되었습니다");
+  }
+  </script>
+</body>
+
+</html>
